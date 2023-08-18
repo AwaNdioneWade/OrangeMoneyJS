@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <!-- Font favicon -->
+            <link rel="icon" href="images/favicon.png">
+            <!-- bootstrap5 -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+            <script src="https://kit.fontawesome.com/3e56bd9026.js" crossorigin="anonymous"></script>
+            <!-- Font Awesome5 -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css" integrity="sha512-SgaqKKxJDQ/tAUAAXzvxZz33rmn7leYDYfBP+YoMRSENhf3zJyx3SBASt/OfeQwBHA1nxMis7mM3EV/oYT6Fdw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <!-- button navbar -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+            <!-- tooltip -->
+            <script>
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+            })
+            </script>
+            <title>Orange Money</title>
+            <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <div class="container phone mt-5">
+        <div class="row mesSpace">
+            <div class="col-12 mt-5" id="espaceAffiche"></div>
+            <div id="programme" class=" flex-column align-items-center my-5">
+                <p>1: Solde de mon compte</p>
+                <p>2: Transfert d'argent</p>
+                <p>3: Paiement de facture</p>
+                <p>4: Achats de crédit</p>
+                <p>5: Quitter</p>
+                <div class="d-flex">
+                    <input type="text" placeholder="entrez un nombre" id="programmeInput">
+                    <button type="submit" id="valide">valider</button>
+                </div>
+            </div>
+            <div id="solde" class="my-5 align-items-center justify-content-center">
+            </div>
+            <div id="transfert" class="my-5 align-items-center justify-content-center flex-column">
+                <input type="text" placeholder="entrez le montant à transférer" id="transfertInput" class="my-5">
+                <div class="align-items-center justify-content-center flex-row">
+                    <button type="submit" id="send" class="my-5">Envoyer</button>
+                    <button type="submit" id="quitter" class="my-5">Quitter</button>
+                </div>
+            </div>
+            <div id="tarnsfertEffectuer" class="my-5 align-items-center justify-content-center">
+                <div id="reussi"></div>
+                <div id="echouer"></div>
+            </div>
+            <div id="paiement" class="my-5 align-items-center justify-content-center">
+                <p>1: Liquide: </p>
+                <p>2: Chéque: </p>
+                <input type="text" placeholder="Mode paiement" id="payInput" class="">
+                <div class="align-items-center justify-content-center flex-row">
+                    <button type="submit" id="sendPay" class="my-5">Envoyer</button>
+                    <button type="submit" id="quitterPay" class="mb-5">Quitter</button>
+                </div>
+            </div>
+            <div id="modePay" class="my-5 flex-column align-items-center justify-content-center"></div>
+            <div id="credit" class="my-5 align-items-center justify-content-center">
+                <p>Numéro à transférer: </p><input type="text" placeholder="entrez le numéro" id="numInput">
+                <div class="align-items-center justify-content-center flex-row">
+                    <button type="submit" id="sendNum" class="my-5">Envoyer</button>
+                    <button type="submit" id="quittercredit" class="my-5">Quitter</button>
+                </div>
+            </div>
+            <div id="creditPrix" class="my-5 align-items-center justify-content-center">
+                <p>Montant crédit: </p><input type="text" placeholder="entrez le montant" id="montantInput">
+                <div class="align-items-center justify-content-center flex-row">
+                    <button type="submit" id="sendMontant" class="my-5">Envoyer</button>
+                    <button type="submit" id="quitterMontant" class="my-5">Quitter</button>
+                </div>
+            </div>
+            <div id="erreur" class="my-5 align-items-center justify-content-center">
+                <p>rreur requéte</p>
+                <button type="submit" id="quitterErreur" class="mt-5">Quitter</button>
+            </div>
+        </div>        
+        <div id="boutons" class="row gx-4 my-5">
+            <button class="bouton" id="un" value="1">1</button>
+            <button class="bouton" id="deux" value="2">2</button>
+            <button class="bouton" id="trois" value="3">3</button>
+
+            
+            <button class="bouton" id="quatre" value="4">4</button>
+            <button class="bouton" id="cinq" value="5">5</button>
+            <button class="bouton" id="six" value="6">6</button>
+
+            
+            <button class="bouton" id="sept" value="7">7</button>
+            <button class="bouton" id="huit" value="8">8</button>
+            <button class="bouton" id="neuf" value="9">9</button>
+
+            
+            <button class="bouton" id="zz" value="#">#</button>
+            <button class="bouton" id="zero" value="0">0</button>
+            <button class="bouton" id="etoile" value="*">*</button>
+
+            
+            <button class="bouton me-5 mt-3" id="appel" value="2">$</button>
+            <button class="bouton ms-5 mt-3" id="delet" value="">\</button>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
